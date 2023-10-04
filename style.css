@@ -1,0 +1,585 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Zhi+Mang+Xing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+/*hover effect*/
+nav{
+	position: fixed;
+	top:0px;
+	left: 0;
+	width: 100%;
+	padding: 1.3rem 10%;
+	background: #991c1f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100; 
+	text-transform: uppercase;
+}
+.navbar ul li{
+	padding: 15px 24px;
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+}
+.navbar ul li a{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: "Poppins";
+	transition-delay: calc(.15s *var(--i));
+}
+.navbar ul li::after{
+	content: "";
+	height: 2px;
+	width: 0;
+	background-color: #efe7e4;
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+}
+.navbar ul li:hover::after {
+	content: "";
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	background-color: #e1a426;
+	transition: 0.1s;
+	left: 0;
+	bottom: 4px;
+}
+.active {
+	font-weight: bold;
+	color: #e1a426;
+	bottom:4px;
+}
+#check{
+	display: none;
+}
+.icons{
+	font-size: 45px;
+	right: 5%;
+	position: absolute;
+	color:#ffffff;
+	cursor: pointer;
+	display: none;
+}
+
+
+/*Mobile*/
+@media only screen and (max-width: 768px){
+	.icons{
+		display:inline-flex;
+	}
+	#check:checked~.icons #showMenu{
+		display: none;
+	}
+	.icons #hideMenu{
+		 display: none;
+	}
+	#check:checked~.icons #hideMenu{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top:100%;
+		left:0;
+		width: 100%;
+		height: 0px;
+		background:  #991c1f;
+		transition: .4s ease;
+		overflow: hidden;
+	}
+	#check:checked~.navbar{
+		height: 25.9rem;
+	}
+	.navbar ul li{
+		display: block;
+		font-size:16px;
+		text-align: center;
+		margin: 25px 0;
+		text-transform: uppercase;
+	}
+	.navbar ul li:hover::after{
+		display: none;
+	}
+}
+
+
+
+/* The hero image */
+.hero {
+	/* Use "linear-gradient" to add a darken background effect to the image (banner.jpg). This will make the text easier to read */
+	height: 800px;
+	width: 100%;
+	background-image:url("Images/hero.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.hero-text{
+	padding: 125px 125px 40px 160px;
+}
+.hero h1 {
+	color: #f7cd77;
+	font-size: 150px;
+	font-family: "Zhi Mang Xing", cursive;
+	font-weight: bold;
+	margin-top: 100px;
+	padding:0px 0px 0px 0px;
+}
+.hero p {
+	color: #ffffff;
+	font-size: 15px;
+	line-height: 25px;
+	font-family: "Poppins", sans-serif;
+	padding: 26px 100px 0px 20px;
+	margin-left: 10px;
+	margin-right: 150px;
+}
+.links {
+	padding: 30px 16px;
+}
+.links a {
+	color: #ffffff;
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: "Poppins", sans-serif;
+}
+.btn {
+	margin-left: 15px;
+	border: 2px solid;
+	padding: 10px 35px;
+	border-radius: 30px;
+}
+.btn:hover {
+	color: #f7cd77;
+}
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	margin-top: 10%;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+	.hero{
+		height: 920px;
+	}
+	.hero-text{
+		padding: 60px;
+		
+	}
+	.hero h1 {
+		font-size: 60px;
+		margin-bottom: 30px;
+	}
+	.hero p{
+		padding: 12px 5px 0px 10px;
+		font-size: 12px;
+		margin-right: 0px;
+	}
+	.btn{
+		margin-left: 0px;
+	}
+}
+
+/*origin of culture*/
+.container {
+	width: 100%;
+	height: 550px;
+	position: relative;
+}
+.left {
+		width: 400px;
+		left: 0;
+		right: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		position: absolute;
+		height: 550px;
+		background: url("Images/home1.jpg");
+		box-shadow: 5px 4px 10px rgba(37,37,37,0.5);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		object-fit: contain;
+		border-radius: 8px;
+}
+.right {
+		width: 600px;
+		top: 13%;
+		left: 300px;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		position: absolute;
+		min-height: 400px;
+		background-color: #f7cd77;
+		padding: 30px;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+	}
+.right h1 {
+		font-size: 40px;
+		font-weight: bold;
+		font-family: "Poppins", sans-serif;
+		color: #991c1f;
+		margin-top:27px;
+	}
+.line {
+	width: 150px;
+	height: 5px;
+	background: #991c1f;
+	margin: 5px 30px;
+}
+.right p {
+	margin: 40px 30px 20px;
+	line-height: 23px;
+	font-family: "Poppins", sans-serif;
+	font-size: 14px;
+	color: #991c1f;
+	font-opacity: 80%;
+}
+.right a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #efe7e4;
+	background-color: #991c1f;
+	border-radius: 20px;
+	padding: 8px 25px;
+	font-family: "Poppins", sans-serif;
+	font-size: 12px;
+	margin: 0 26px;
+}
+.right a:hover {
+	color: #991c1f;
+	background-color: #efe7e4;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+	.container{
+		position: none;
+		padding: 45px 0px;
+		flex-direction: column;
+	}
+	.left {
+		width: 250px;
+		height: 300px;
+		margin-left: 75px;
+	}
+	.right {
+		border-radius: 8px;
+		width: 80%;
+		top: 50%;
+		left: 3%;
+		right: 0;
+		bottom: 30%;
+		min-height: 375px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.content{
+		margin-right: 0px;
+	}
+	.right h1 {
+		font-size: 20px;
+		margin-left: 3px;
+		margin-bottom: 8px;
+		margin-top:2px;
+	}
+	.line {
+	width: 85px;
+	height: 3px;
+	background: #991c1f;
+	margin: 0px 24px;
+}
+	.right p{
+		font-size: 11px;
+		line-height: 1.6;
+		margin-top:14px;
+		margin-left: 20px;
+	}
+}
+	
+
+/*Explore The artwork Slider*/
+.wrapper-text {
+	padding: 10px 0px 50px 120px;
+}
+.wrapper-text h2 {
+	font-family: "Zhi Mang Xing", cursive;
+	color: #000;
+	font-size: 60px;
+	margin-top: 80px;
+	margin-left: 83px;
+}
+.wrapper-text p {
+	font-family: "Poppins", sans-serif;
+	font-size: 20px;
+	margin: 10px  0px 30px 85px;
+}
+.wrapper {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper .carousel {
+	white-space: nowrap;
+	font-size: 0px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.carousel img {
+	height: 320px;
+	object-fit: cover;
+	margin-left: 15px;
+	width: calc(100% / 5);
+	transition: transform 0.5s;
+	border-radius: 8px;
+}
+#leftBtn,
+#rightBtn {
+	width: 40px;
+	cursor: pointer;
+	margin: 0 21px;
+}
+.carousel img:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+	.wrapper-text h2{
+		font-size: 45px;
+		margin-left: 34px;
+	}
+	.wrapper-text p{
+		margin-left: 60px;
+	}
+	.wrapper-text {
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-top:80px;
+	}
+	.wrapper{
+		width: 100%;
+	}
+	.carousel img {
+	height: 320px;
+	object-fit: cover;
+	margin: 0px 10px 0px 10px;
+	width: calc(100% / 1);
+	transition: transform 0.5s;
+	border-radius: 8px;
+}
+	#leftBtn,
+	#rightBtn {
+	width: 20px;
+	cursor: pointer;
+	margin: 0px 15px;
+	}
+}
+
+/*Ready to know more about Malaysia Artists*/
+.artists {
+	width: 100%;
+	cursor: pointer;
+}
+.artists img{
+	width: 100%;
+}
+
+
+/*activities with image side by side*/
+.activities {
+	padding: 80px 0 20px 0px;
+	text-align: center;
+	justify-content: center;
+}
+.activities h4 {
+	font-family: "Zhi Mang Xing", cursive;
+	color: #000000;
+	font-size: 60px;
+}
+.activities p {
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	margin-left: 18px;
+}
+.activities-img{
+	display: flex;
+	overflow: none;
+	
+}
+.column img{
+	border-radius: 14px;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+.column img:hover {
+	cursor: pointer;
+	transform: scale(1.4);
+}
+.column p{
+	font-family: "Poppins",sans-serif;
+	font-size: 13px;
+	text-align: center;
+	line-height: 23px;
+	padding: 0px 10px 0px 10px;
+}
+.row {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 35px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+	.activities h4 {
+	font-family: "Zhi Mang Xing", cursive;
+	color: #991c1f;
+	font-size: 45px;
+	}
+	.row {
+		flex-direction: column;
+	}
+	.column{
+		padding: 10px 0px;
+		margin-bottom: 25px;
+	}
+	.column img{
+		margin-bottom: 15px;
+	}
+	.column p{
+	font-family: "Poppins",sans-serif;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	}
+}
+
+/*footer*/
+footer {
+	background-color: darkred;
+	
+}
+
+footer .logo {
+	margin: 0rem 2.10rem;
+	margin-top: 2rem;
+	left: 5%;
+	z-index: 10;
+	position: relative;
+}
+
+.footer-flex {
+	padding: 1rem;
+	padding-left: 8%;
+	padding-right: 8%;
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+	color: white;
+	font-family: "Poppins";
+}
+
+.footer {
+	width: 33%;
+}
+
+footer h3 {
+	text-decoration: none;
+	margin-bottom: 12px;
+}
+.footer p{
+	font-size:12px;
+	margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+	.footer-flex {
+		flex-direction: column;
+	}
+
+	.footer {
+		width: 100%;
+	}
+}
+
+.socials {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	padding: 5px;
+}
+
+.socials div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: grey;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.quick-links ul {
+	list-style-type: none;
+	cursor: pointer;
+	font-size:14px;
+}
+.quick-links ul a{
+	text-decoration: none;
+	color:#fff;
+}
+.quick-links ul a:visited{
+	color:#f7cd77;
+}
+
+.quick-links li {
+	padding-top: 8px;
+}
+
+.contact-us-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.contact-us-item {
+	display: flex;
+	flex-direction: row;
+	margin-top:15px;
+	margin-bottom:8px;
+	font-size:12px;
+}
+.contact-us-item i{
+	margin-right: 15px;
+	margin-top:2px;
+	font-size:20px;
+}

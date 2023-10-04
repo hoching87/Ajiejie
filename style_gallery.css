@@ -1,0 +1,262 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+/* CSS Document */
+
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/*hover effect*/
+nav{
+	position: fixed;
+	top:0px;
+	left: 0;
+	width: 100%;
+	padding: 1.3rem 10%;
+	background: #991c1f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100; 
+	text-transform: uppercase;
+}
+.navbar ul li{
+	padding: 15px 24px;
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+}
+.navbar ul li a{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: "Poppins";
+	transition-delay: calc(.15s *var(--i));
+}
+.navbar ul li::after{
+	content: "";
+	height: 2px;
+	width: 0;
+	background-color: #efe7e4;
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+}
+.navbar ul li:hover::after {
+	content: "";
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	background-color: #e1a426;
+	transition: 0.1s;
+	left: 0;
+	bottom: 4px;
+}
+.active {
+	font-weight: bold;
+	color: #e1a426;
+	bottom:4px;
+}
+#check{
+	display: none;
+}
+.icons{
+	font-size: 45px;
+	right: 5%;
+	position: absolute;
+	color:#ffffff;
+	cursor: pointer;
+	display: none;
+}
+
+
+/*Mobile*/
+@media only screen and (max-width: 768px){
+	.icons{
+		display:inline-flex;
+	}
+	#check:checked~.icons #showMenu{
+		display: none;
+	}
+	.icons #hideMenu{
+		 display: none;
+	}
+	#check:checked~.icons #hideMenu{
+		display: block;
+	}
+	.navbar{
+		position: absolute;
+		top:100%;
+		left:0;
+		width: 100%;
+		height: 0px;
+		background:  #991c1f;
+		transition: .4s ease;
+		overflow: hidden;
+	}
+	#check:checked~.navbar{
+		height: 25.9rem;
+	}
+	.navbar ul li{
+		display: block;
+		font-size:16px;
+		text-align: center;
+		margin: 25px 0;
+		text-transform: uppercase;
+	}
+	.navbar ul li:hover::after{
+		display: none;
+	}
+}
+
+/*大头*/
+.hero {
+	height: 700px;
+	width: 100%;
+	background-image:url("Images/workshopbanner.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/*Gallery display*/
+.gallery h1{
+	text-align: center;
+	margin-top: 5%;
+	font-size:50px;
+	font-family: "poppins"
+}
+
+
+.img-area {
+	padding: 3%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 15px;
+	width: 100%;
+}
+
+.img-area img {
+	width: 30%;
+	border-radius: 12px;
+}
+.img-area img:hover {
+	cursor: pointer;
+	transform: scale(1.4);
+}
+
+@media only screen and (max-width: 768px) {
+	.img-area img {
+		width: 100%;
+	}
+}
+
+footer {
+	background-color: darkred;
+	
+}
+
+footer .logo {
+	margin: 0rem 2.10rem;
+	margin-top: 2rem;
+	left: 5%;
+	z-index: 10;
+	position: relative;
+}
+
+.footer-flex {
+	padding: 1rem;
+	padding-left: 8%;
+	padding-right: 8%;
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+	color: white;
+	font-family: "Poppins";
+}
+
+.footer {
+	width: 33%;
+}
+
+footer h3 {
+	text-decoration: none;
+	margin-bottom: 12px;
+}
+.footer p{
+	font-size:12px;
+	margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+	.footer-flex {
+		flex-direction: column;
+	}
+
+	.footer {
+		width: 100%;
+	}
+}
+
+.socials {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	padding: 5px;
+}
+
+.socials div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: grey;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.quick-links ul {
+	list-style-type: none;
+	cursor: pointer;
+	font-size:14px;
+}
+.quick-links ul a{
+	text-decoration: none;
+	color:#fff;
+}
+.quick-links ul a:visited{
+	color:#f7cd77;
+}
+
+.quick-links li {
+	padding-top: 8px;
+}
+
+.contact-us-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.contact-us-item {
+	display: flex;
+	flex-direction: row;
+	margin-top:15px;
+	margin-bottom:8px;
+	font-size:12px;
+}
+.contact-us-item i{
+	margin-right: 15px;
+	margin-top:2px;
+	font-size:20px;
+}
